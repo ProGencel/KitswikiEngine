@@ -6,6 +6,15 @@ import com.badlogic.gdx.utils.Json;
 
 public class DataManager {
 
+    /**
+     * The recommended HMAC key is 32 bytes long and encoded in Base64.
+     * The HMAC key should be stored in the environment variables.
+     */
+    public void setHmacKey(String key)
+    {
+        HmacSigner.setHmacKeyBase64(key);
+    }
+
     public <T> void save(T data)
     {
         Json json = new Json();
